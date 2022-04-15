@@ -1,0 +1,312 @@
+*
+    margin: 0px 
+    padding: 0px 
+    box-sizing: border-box
+
+/*COLORS*/
+$DesaturatedRed: hsl(0, 36%, 70%)
+$SoftRed: hsl(0, 93%, 68%)
+$DarkGrayishRed: hsl(0, 6%, 24%)
+
+/*FONTS*/
+
+@font-face 
+    font-family: 'JosefinSans-Light' 
+    src: url(./fonts/JosefinSans-Light.ttf)
+    
+@font-face 
+    font-family: 'JosefinSans-Regular' 
+    src: url(./fonts/JosefinSans-Regular.ttf)
+    
+@font-face 
+    font-family: 'JosefinSans-SemiBold' 
+    src: url(./fonts/JosefinSans-SemiBold.ttf)
+
+
+body
+    width: 100vw
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: linear-gradient( -130deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+
+    .container
+        width: 100%
+        height: 100%
+        max-width: 1440px
+        max-height: 800px
+        background-image: url(../images/bg-pattern-desktop.svg)
+        display: grid
+        grid-template-columns: 58% 42%
+        grid-template-rows: 20% 80%
+        grid-template-areas: "box1 box2""box3 box2"
+    
+        .logo
+            grid-area: box1
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            
+            img
+                margin-left: 20%
+        
+        .image
+            grid-area: box2
+            min-width: 42%
+            height: 100%
+            overflow: hidden
+            background-image: url(../images/hero-desktop.jpg)
+        
+        .comming
+            grid-area: box3
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            margin-top: 8%
+            
+            
+            .title
+
+                width: 60%
+                height: 40%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                margin-bottom: 2%
+                
+
+                p
+
+                    width: 100%
+                    font-family: 'JosefinSans-Light'
+                    font-size: 4rem
+                    text-transform: uppercase
+                    letter-spacing: 1rem
+                    color: $DesaturatedRed
+                
+                h1
+
+                    width: 100%
+                    font-family: 'JosefinSans-SemiBold'
+                    font-size: 4rem
+                    text-transform: uppercase
+                    letter-spacing: 1rem
+                    line-height: 4.5rem
+                    color: $DarkGrayishRed
+            
+            .description
+
+                width: 60%
+                font-family: 'JosefinSans-Regular'
+                line-height: 1.6rem
+                text-align: left
+                margin-bottom: 3%
+
+                p
+                    width: 90%
+                    color: $DesaturatedRed
+            
+            .form-content
+                display: flex
+                flex-direction: column
+                justify-content: center
+                width: 60%
+                height: 15%
+            
+                .form
+                    border: 1px solid $DesaturatedRed
+                    width: 90%
+                    height: 65%
+                    display: flex
+                    flex-direction: row
+                    border-radius: 25px
+                    margin-left: 0.5%
+                
+                    .email-input
+                        border: 0px
+                        border-radius: 25px
+                        width: 79%
+                        background: none
+                        text-indent: 8%
+                        text-align: justify
+                        font-family: 'JosefinSans-Regular'
+                        font-size: 1rem
+                        color: $DarkGrayishRed
+
+                    .email-input::placeholder
+                        color: $DesaturatedRed
+                        opacity: 50%
+                    
+                    
+                    .bottom-input
+                        width: 21%
+                        margin-left: 0%
+                        height: 100%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: red
+                        border-radius: 25px
+                        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
+                        box-shadow: 3px 4px 10px 0.5px #ccc
+                        filter: brightness(95%)
+                        transition: all 300ms
+                    
+                    .bottom-input:hover
+                        filter: brightness(110%)
+                        cursor: pointer
+                    
+                .error
+                    display: none
+                    flex-direction: row
+                    justify-content: flex-start
+                    align-items: center
+                    margin-top: 1%
+                    margin-left: 5.5%
+                    font-family: 'JosefinSans-Regular'
+                    color: red
+
+                    img
+                        width: 5%
+                        height: 100%
+                        margin-right: 1%
+                    
+                    .error-message
+                        width: 100%
+                        height: 65%                        
+
+@media ( max-width: 1023px  )
+
+    body
+        width: 100vw
+        height: auto
+
+        .container
+            width: 100%
+            height: auto
+            max-height: unset
+            grid-template-rows: auto
+            grid-template-columns: 100%
+            background-size: 100%
+            background-repeat: no-repeat
+
+            .logo
+                grid-column: 1
+                grid-row: 1
+                height: 5rem
+                width: 60%
+                margin: 0px auto
+
+                img
+                    margin-left: unset
+            
+            .image
+                grid-column: 1
+                grid-row: 2
+                height: 25rem
+                width: 60%
+                margin: 0px auto
+            
+            .comming
+                grid-column: 1
+                grid-row: 3
+                height: 35rem
+                width: 60%
+                margin: 0px auto
+                justify-content: center
+                align-items: center
+                text-align: center
+
+                .title
+                    width: 100%
+                    font-size: 3rem
+                
+                .description
+                    width: 70%
+                    text-align: center
+                    margin-bottom: 5%
+
+                    p
+                        width: 100%
+                
+                .form-content
+                    width: 70%
+
+                    .form
+                        width: 100%
+
+                    .error .error-message
+                        width: unset
+
+@media ( max-width: 768px )
+    body
+        width: 100vw
+        display: flex
+        flex-direction: row
+
+        .container 
+            border: 1px solid red
+            width: 100%
+
+            .logo
+                width: 100%
+
+                img
+                    width: 20%
+                    margin-left: 10%
+            
+            .image
+                border: 1px solid green
+                width: 80%
+                height: 25rem
+                background-image: url(../images/hero-desktop.jpg)
+                background-repeat: no-repeat
+
+            .comming
+                width: 100%
+
+                .title
+                    width: 80%
+                    
+                    h1
+                        font-size: 3rem
+                        line-height: 3rem
+                    
+                    p
+                        font-size: 3rem
+                
+                .description
+                    width: 95%
+
+                .form-content
+                    width: 95%
+                
+@media ( max-width: 425px )
+    body .container 
+
+            .logo img
+                width: 27%
+
+            .image
+                width: 100%
+                height: 15rem
+                background-image: url(../images/hero-mobile.jpg)
+                background-size: cover
+
+            .comming
+                border: 1px solid red
+                justify-content: flex-start
+
+                .title 
+
+                    h1 
+                        font-size: 2.5rem
+                        letter-spacing: 0.5rem
+                    
+                    p
+                        font-size: 2.5rem
+                        letter-spacing: 0.5rem
